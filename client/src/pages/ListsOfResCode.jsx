@@ -80,7 +80,8 @@ const ListsOfResCode = () => {
                                 }
                               );
                               setLists(res.data.lists);
-                              setCurrentList(null);
+                              if (res.data.lists.length > 0)
+                                setCurrentList(res.data.lists[0]);
                             } catch (error) {
                               //   console.log(error);
                               alert(error.response.data);
