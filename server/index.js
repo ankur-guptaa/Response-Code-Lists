@@ -13,10 +13,10 @@ const app = express();
 app.use(cors({ origin: process.env.CLIENTURL }))
 app.use(express.json());
 
-setInterval(async () => {
-    const res = await axios.get(`${process.env.SERVERURL}/test`);
-    console.log(res.data);
-}, 420000)
+// setInterval(async () => {
+//     const res = await axios.get(`${process.env.SERVERURL}/test`);
+//     console.log(res.data);
+// }, 420000)
 
 app.get("/test", (req, res) => {
     res.status(200).send("RUNNING");
